@@ -27,7 +27,7 @@ npm install
 Ensure your code exudes clarity and consistency with our predefined standards:
 
 ```sh
-npm run fmt.apply
+npm run fmt
 ```
 
 ### 4. **Linting**
