@@ -1,0 +1,54 @@
+/**
+ * WHAT IS THIS FILE?
+ *
+ * Globally applied styles. No matter which components are in the page or matching route,
+ * the styles in here will be applied to the Document, without any sort of CSS scoping.
+ *
+ */
+
+:root {
+  --dark-background: #2b2f3a; /* Background (Dark Grayish Bluish) */
+  --dark-red: #d43f4a; /* Muted Red */
+  --dark-green: #3d8e5d; /* Muted Green */
+  --dark-blue: #2f6d99; /* Muted Blue */
+  --dark-text: #e0e0e0; /* Text (For light text against dark backgrounds) */
+  --dark-subtext: #a0a0a0; /* Subtext (For lesser important text) */
+  --dark-devider: #42465b; /* Border/Divider Color */
+
+  --light-background: #e6eaf0; /* Background (Dark Grayish Bluish) */
+  --light-red: #e05a67; /* Muted Red */
+  --light-green: #59a883; /* Muted Green */
+  --light-blue: #508db3; /* Muted Blue */
+  --light-text: #2c2f3b; /* Text (For light text against dark backgrounds) */
+  --light-subtext: #6c6f7f; /* Subtext (For lesser important text) */
+  --light-devider: #b2b5c3; /* Border/Divider Color */
+}
+
+html {
+  line-height: 1;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  line-height: inherit;
+}
