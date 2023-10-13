@@ -1,0 +1,9 @@
+services:
+  ksox-web:
+    container_name: ksox-web
+    hostname: ksox-web
+    build:
+      context: ./
+      dockerfile: ./ksox-web.dockerfile
+    ports:
+      - 3000:80

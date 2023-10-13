@@ -1,0 +1,16 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+metadata:
+  name: ksox-web
+build:
+  platforms:
+    - linux/amd64
+  artifacts:
+    - image: ksox-web
+      context: ./
+      docker:
+        dockerfile: ksox-web.dockerfile
+manifests:
+  kustomize:
+    paths:
+      - ./k8s/patches/dev
