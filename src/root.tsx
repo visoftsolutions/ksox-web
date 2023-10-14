@@ -7,7 +7,7 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
-import { darkTheme, lightTheme } from "./theme.css";
+import { darkTheme } from "./theme.css";
 
 export default component$(() => {
   /**

@@ -1,4 +1,4 @@
-import { component$, Slot, useStyles$ } from "@builder.io/qwik";
+import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
@@ -27,12 +27,15 @@ export const useServerTimeLoader = routeLoader$(() => {
 });
 
 export default component$(() => {
-  // useStyles$(styles);
   return (
     <div class={layoutRow}>
-      <header class={header}><Header></Header></header>
+      <header class={header}>
+        <Header></Header>
+      </header>
       <div class={layoutColumn}>
-        <nav class={nav}><SideNav></SideNav></nav>
+        <nav class={nav}>
+          <SideNav></SideNav>
+        </nav>
         <main class={main}>
           <Slot />
         </main>
