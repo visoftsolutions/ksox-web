@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "ksox-finance",
+  "name": "Ksox Finance",
   "short_name": "Ksox Finance",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#000000",
-  "description": "Ksox Finance Platform"
+  "description": "Ksox Finance Business Platform"
 }
