@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ksox-finance
+  labels:
+    app: ksox-finance
+spec:
+  selector:
+    matchLabels:
+      app: ksox-finance
+  template:
+    metadata:
+      labels:
+        app: ksox-finance
+    spec:
+      containers:
+        - name: ksox-finance
+          image: ksox-finance
+          envFrom:
+            - secretRef:
+                name: ksox-finance-secrets
+            - configMapRef:
+                name: ksox-finance-config
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 100m
+            limits:
+              memory: 1000Mi
+              cpu: 1000m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ksox-finance
+spec:
+  selector:
+    app: ksox-finance
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

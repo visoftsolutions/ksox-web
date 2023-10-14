@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: ksox-finance
+
+resources:
+  - ./../../resources
+  - ./certificates.yaml
+  - ./issuer.yaml
+  - ./ksox-finance.yaml
+
+secretGenerator:
+  - name: ksox-finance-secrets
+    env: ./enviroment/ksox-finance-secrets.env
+
+configMapGenerator:
+  - name: ksox-finance-config
+    env: ./enviroment/ksox-finance-config.env
+
+generatorOptions:
+  disableNameSuffixHash: true

@@ -1,7 +1,7 @@
 FROM node:20-alpine AS installer
 WORKDIR /app
 COPY . .
-RUN npm install
+RUN npm ci
 
 FROM installer AS builder
 WORKDIR /app

@@ -23,7 +23,6 @@
 
 # Node.js
 **/node_modules/
-**/package-lock.json
 
 # Development
 tmp

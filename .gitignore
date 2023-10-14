@@ -40,3 +40,7 @@ lerna-debug.log*
 # Yarn
 .yarn/*
 !.yarn/releases
+
+# Envs
+.env
+*.env

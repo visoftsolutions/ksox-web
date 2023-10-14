@@ -1,9 +1,9 @@
 services:
-  ksox-web:
-    container_name: ksox-web
-    hostname: ksox-web
+  ksox-finance:
+    container_name: ksox-finance
+    hostname: ksox-finance
     build:
       context: ./
-      dockerfile: ./ksox-web.dockerfile
+      dockerfile: ./ksox-finance.dockerfile
     ports:
       - 3000:80
