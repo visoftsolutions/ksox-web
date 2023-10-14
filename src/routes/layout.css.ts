@@ -12,7 +12,7 @@ export const layoutRow = style({
 
 export const layoutColumn = style({
   display: "grid",
-  gridTemplateColumns: "36px 1fr",
+  gridTemplateColumns: "auto 1fr",
   gap: "1px",
   backgroundColor: vars.color.backgroundHighlight,
 });
