@@ -6,7 +6,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Ksox Finance",
+  title: "KSOX Finance",
   meta: [
     {
       name: "description",

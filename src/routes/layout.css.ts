@@ -5,7 +5,7 @@ export const layoutRow = style({
   width: "100vw",
   height: "100vh",
   display: "grid",
-  gridTemplateRows: "36px 1fr",
+  gridTemplateRows: "auto 1fr",
   backgroundColor: vars.color.backgroundHighlight,
   gap: "1px",
 });

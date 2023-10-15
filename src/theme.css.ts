@@ -11,6 +11,10 @@ export const [darkTheme, vars] = createTheme({
     subtext: "#838383", // Subtext (For lesser important text)
     divider: "#2b2b2b", // Border/Divider Color
   },
+  transitions: {
+    duration: "0.1s",
+    timingFunction: "ease-in-out",
+  },
 });
 
 export const lightTheme = createTheme(vars, {
@@ -23,5 +27,9 @@ export const lightTheme = createTheme(vars, {
     text: "#1f1f1f", // Text (For dark text against light backgrounds)
     subtext: "#5c5c5c", // Subtext (For lesser important text)
     divider: "#e5e5e5", // Border/Divider Color
+  },
+  transitions: {
+    duration: "0.1s",
+    timingFunction: "ease-in-out",
   },
 });
