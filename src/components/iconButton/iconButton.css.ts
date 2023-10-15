@@ -1,11 +1,18 @@
-import { style } from "@vanilla-extract/css";
+import { type ComplexStyleRule, style } from "@vanilla-extract/css";
 import { vars } from "~/theme.css";
+
+const mobile: ComplexStyleRule = {
+  padding: "16px",
+};
+
+const desktop: ComplexStyleRule = {
+  padding: "8px",
+};
 
 export const button = style({
   display: "grid",
   justifyItems: "center",
   alignItems: "center",
-  padding: "8px",
   borderRadius: "8px",
   transition: "background-color",
   transitionDuration: vars.transitions.duration,
@@ -14,6 +21,10 @@ export const button = style({
     backgroundColor: vars.color.backgroundHighlight,
   },
   cursor: "pointer",
+  "@media": {
+    "screen and (min-width: 769px)": desktop,
+    "screen and (max-width: 768px)": mobile,
+  },
 });
 
 export const iconSlot = style({

@@ -28,8 +28,9 @@ html {
     "Noto Color Emoji";
 }
 
+html,
 body {
-  padding: 0;
+  height: 100%;
   margin: 0;
-  line-height: inherit;
+  padding: 0;
 }

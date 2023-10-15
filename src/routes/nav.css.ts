@@ -1,6 +1,20 @@
-import { style } from "@vanilla-extract/css";
+import { type ComplexStyleRule, style } from "@vanilla-extract/css";
 import { vars } from "~/theme.css";
+
+const mobile: ComplexStyleRule = {
+  gridRowStart: "2",
+  gridRowEnd: "3",
+};
+
+const desktop: ComplexStyleRule = {
+  gridColumnStart: "1",
+  gridColumnEnd: "2",
+};
 
 export const nav = style({
   backgroundColor: vars.color.background,
+  "@media": {
+    "screen and (min-width: 769px)": desktop,
+    "screen and (max-width: 768px)": mobile,
+  },
 });
