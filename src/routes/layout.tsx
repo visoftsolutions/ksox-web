@@ -1,8 +1,13 @@
-import { component$, Slot, useStyles$ } from "@builder.io/qwik";
+import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
-import styles from "./styles.css?inline";
+import { layoutColumn, layoutRow } from "./layout.css";
+import { SideNav } from "~/components/sidenav/sidenav";
+import { Header } from "~/components/header/header";
+import { header } from "./header.css";
+import { nav } from "./nav.css";
+import { main } from "./main.css";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -22,14 +27,19 @@ export const useServerTimeLoader = routeLoader$(() => {
 });
 
 export default component$(() => {
-  useStyles$(styles);
   return (
-    <>
-      {/* <Header /> */}
-      <main>
-        <Slot />
-      </main>
-      {/* <Footer /> */}
-    </>
+    <div class={layoutRow}>
+      <header class={header}>
+        <Header></Header>
+      </header>
+      <div class={layoutColumn}>
+        <nav class={nav}>
+          <SideNav></SideNav>
+        </nav>
+        <main class={main}>
+          <Slot />
+        </main>
+      </div>
+    </div>
   );
 });

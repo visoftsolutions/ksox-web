@@ -6,11 +6,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "KSOX Finance",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content: "All in one platform for your crypto business",
     },
   ],
 };

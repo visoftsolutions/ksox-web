@@ -7,6 +7,7 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
+import { darkTheme } from "./theme.css";
 
 export default component$(() => {
   /**
@@ -24,7 +25,7 @@ export default component$(() => {
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
-      <body lang="en">
+      <body lang="en" class={darkTheme}>
         <RouterOutlet />
       </body>
     </QwikCityProvider>
