@@ -6,4 +6,4 @@ services:
       context: ./
       dockerfile: ./ksox-finance.dockerfile
     ports:
-      - 3000:80
+      - 0.0.0.0:3000:80
