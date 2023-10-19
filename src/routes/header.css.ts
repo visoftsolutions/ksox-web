@@ -9,10 +9,9 @@ const desktop: ComplexStyleRule = {
   gridTemplateColumns: "auto 1fr",
 };
 
-export const header = style({
+export const header = style([mobile, {
   backgroundColor: vars.color.background,
   "@media": {
-    "screen and (min-width: 769px)": desktop,
-    "screen and (max-width: 768px)": mobile,
+    "screen and (min-width: 768px)": desktop,
   },
-});
+}]);

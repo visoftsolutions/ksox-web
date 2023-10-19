@@ -11,10 +11,9 @@ const desktop: ComplexStyleRule = {
   gridColumnEnd: "3",
 };
 
-export const main = style({
+export const main = style([mobile, {
   backgroundColor: vars.color.background,
   "@media": {
-    "screen and (min-width: 769px)": desktop,
-    "screen and (max-width: 768px)": mobile,
+    "screen and (min-width: 768px)": desktop,
   },
-});
+}]);

@@ -9,7 +9,7 @@ const desktop: ComplexStyleRule = {
   padding: "8px",
 };
 
-export const button = style({
+export const button = style([mobile, {
   display: "grid",
   justifyItems: "center",
   alignItems: "center",
@@ -22,10 +22,9 @@ export const button = style({
   },
   cursor: "pointer",
   "@media": {
-    "screen and (min-width: 769px)": desktop,
-    "screen and (max-width: 768px)": mobile,
+    "screen and (min-width: 768px)": desktop,
   },
-});
+}]);
 
 export const iconSlot = style({
   width: "24px",

@@ -8,13 +8,12 @@ const desktop: ComplexStyleRule = {
   gridTemplateRows: "repeat(6, 1fr)",
 };
 
-export const sidenav = style({
+export const sidenav = style([mobile, {
   display: "grid",
   gap: "2px",
   justifyItems: "center",
   justifyContent: "center",
   "@media": {
-    "screen and (min-width: 769px)": desktop,
-    "screen and (max-width: 768px)": mobile,
+    "screen and (min-width: 768px)": desktop,
   },
-});
+}]);

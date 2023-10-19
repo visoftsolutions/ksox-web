@@ -9,7 +9,7 @@ const layoutRowDesktop: ComplexStyleRule = {
   gridTemplateRows: "auto 1fr",
 };
 
-export const layoutRow = style({
+export const layoutRow = style([layoutRowMobile, {
   height: "100%",
   display: "grid",
   gridAutoFlow: "row",
@@ -17,9 +17,8 @@ export const layoutRow = style({
   gap: "1px",
   "@media": {
     "screen and (min-width: 768px)": layoutRowDesktop,
-    "screen and (max-width: 768px)": layoutRowMobile,
   },
-});
+}]);
 
 const layoutColumnMobile: ComplexStyleRule = {
   gridTemplateRows: "1fr auto",
@@ -31,12 +30,11 @@ const layoutColumnDesktop: ComplexStyleRule = {
   gridAutoFlow: "column",
 };
 
-export const layoutColumn = style({
+export const layoutColumn = style([layoutColumnMobile, {
   display: "grid",
   backgroundColor: vars.color.backgroundHighlight,
   gap: "1px",
   "@media": {
-    "screen and (min-width: 769px)": layoutColumnDesktop,
-    "screen and (max-width: 768px)": layoutColumnMobile,
+    "screen and (min-width: 768px)": layoutColumnDesktop,
   },
-});
+}]);
