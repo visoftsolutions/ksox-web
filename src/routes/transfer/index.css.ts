@@ -1,28 +1,23 @@
-import { style } from "@vanilla-extract/css";
-import { vars } from "~/theme.css";
+import { type ComplexStyleRule, style } from "@vanilla-extract/css";
+import { mediaQuery } from "~/breakpoint.css";
+import { background } from "./layout.css";
 
-export const layout = style({
-  display: "grid",
-  gridAutoFlow: "column",
-  gridTemplateColumns: "300px 1fr",
-  height: "100%",
-  backgroundColor: vars.color.backgroundHighlight,
-  gap: "1px",
-});
+export const index = style([background]);
 
-export const side = style({
-  backgroundColor: vars.color.background,
-});
+const desktop: ComplexStyleRule = {
+  display: "none",
+};
 
-export const left = style([side, {}]);
+const mobile: ComplexStyleRule = {
+  display: "block",
+};
 
-export const right = style({
-  display: "grid",
-  gridAutoFlow: "row",
-  gridTemplateRows: "1fr 200px",
-  gap: "1px",
-});
-
-export const top = style([side, {}]);
-
-export const bottom = style([side, {}]);
+export const threads = style([
+  background,
+  mobile,
+  {
+    "@media": {
+      [mediaQuery.desktop]: desktop,
+    },
+  },
+]);
