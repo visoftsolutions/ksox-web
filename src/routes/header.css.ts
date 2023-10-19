@@ -12,9 +12,12 @@ const desktop: ComplexStyleRule = {
   gridTemplateColumns: "auto 1fr",
 };
 
-export const header = style([mobile, {
-  backgroundColor: vars.color.background,
-  "@media": {
-    [mediaQuery.desktop]: desktop,
+export const header = style([
+  mobile,
+  {
+    backgroundColor: vars.color.background,
+    "@media": {
+      [mediaQuery.desktop]: desktop,
+    },
   },
-}]);
+]);

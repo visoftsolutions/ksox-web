@@ -16,9 +16,12 @@ const desktop: ComplexStyleRule = {
   gridColumnEnd: "2",
 };
 
-export const nav = style([mobile, {
-  backgroundColor: vars.color.background,
-  "@media": {
-    [mediaQuery.desktop]: desktop
+export const nav = style([
+  mobile,
+  {
+    backgroundColor: vars.color.background,
+    "@media": {
+      [mediaQuery.desktop]: desktop,
+    },
   },
-}]);
+]);

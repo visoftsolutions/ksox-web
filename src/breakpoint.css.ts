@@ -1,7 +1,7 @@
 export const breakpoints = {
-    desktop: '768px',
+  desktop: "768px",
 };
 
 export const mediaQuery = {
-    desktop: `screen and (min-width: ${breakpoints.desktop})`,
+  desktop: `screen and (min-width: ${breakpoints.desktop})`,
 };
