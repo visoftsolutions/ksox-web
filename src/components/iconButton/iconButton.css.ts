@@ -1,4 +1,5 @@
 import { type ComplexStyleRule, style } from "@vanilla-extract/css";
+import { mediaQuery } from "~/breakpoint.css";
 import { vars } from "~/theme.css";
 
 const mobile: ComplexStyleRule = {
@@ -22,7 +23,7 @@ export const button = style([mobile, {
   },
   cursor: "pointer",
   "@media": {
-    "screen and (min-width: 768px)": desktop,
+    [mediaQuery.desktop]: desktop,
   },
 }]);
 

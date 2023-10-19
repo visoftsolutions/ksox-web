@@ -1,4 +1,5 @@
 import { type ComplexStyleRule, style } from "@vanilla-extract/css";
+import { mediaQuery } from "~/breakpoint.css";
 import { vars } from "~/theme.css";
 
 const layoutRowMobile: ComplexStyleRule = {
@@ -16,16 +17,18 @@ export const layoutRow = style([layoutRowMobile, {
   backgroundColor: vars.color.backgroundHighlight,
   gap: "1px",
   "@media": {
-    "screen and (min-width: 768px)": layoutRowDesktop,
+    [mediaQuery.desktop]: layoutRowDesktop
   },
 }]);
 
 const layoutColumnMobile: ComplexStyleRule = {
   gridTemplateRows: "1fr auto",
+  gridTemplateColumns: "1fr",
   gridAutoFlow: "row",
 };
 
 const layoutColumnDesktop: ComplexStyleRule = {
+  gridTemplateRows: "1fr",
   gridTemplateColumns: "auto 1fr",
   gridAutoFlow: "column",
 };
@@ -35,6 +38,6 @@ export const layoutColumn = style([layoutColumnMobile, {
   backgroundColor: vars.color.backgroundHighlight,
   gap: "1px",
   "@media": {
-    "screen and (min-width: 768px)": layoutColumnDesktop,
+    [mediaQuery.desktop]: layoutColumnDesktop
   },
 }]);
