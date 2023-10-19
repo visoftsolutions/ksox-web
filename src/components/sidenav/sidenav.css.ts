@@ -2,19 +2,17 @@ import { type ComplexStyleRule, style } from "@vanilla-extract/css";
 import { mediaQuery } from "~/breakpoint.css";
 
 const mobile: ComplexStyleRule = {
-  gridTemplateColumns: "repeat( auto-fit, minmax(60px, 1fr) )",
-  gridTemplateRows: "none",
+  flexFlow: "row wrap",
 };
 
 const desktop: ComplexStyleRule = {
-  gridTemplateColumns: "none",
-  gridTemplateRows: "repeat(6, 1fr)",
+  flexFlow: "column",
 };
 
 export const sidenav = style([
   mobile,
   {
-    display: "grid",
+    display: "flex",
     gap: "2px",
     justifyItems: "center",
     justifyContent: "center",
