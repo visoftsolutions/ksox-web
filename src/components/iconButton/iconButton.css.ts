@@ -1,4 +1,5 @@
 import { type ComplexStyleRule, style } from "@vanilla-extract/css";
+import { mediaQuery } from "~/breakpoint.css";
 import { vars } from "~/theme.css";
 
 const mobile: ComplexStyleRule = {
@@ -9,23 +10,25 @@ const desktop: ComplexStyleRule = {
   padding: "8px",
 };
 
-export const button = style({
-  display: "grid",
-  justifyItems: "center",
-  alignItems: "center",
-  borderRadius: "8px",
-  transition: "background-color",
-  transitionDuration: vars.transitions.duration,
-  transitionTimingFunction: vars.transitions.timingFunction,
-  ":hover": {
-    backgroundColor: vars.color.backgroundHighlight,
+export const button = style([
+  mobile,
+  {
+    display: "grid",
+    justifyItems: "center",
+    alignItems: "center",
+    borderRadius: "8px",
+    transition: "background-color",
+    transitionDuration: vars.transitions.duration,
+    transitionTimingFunction: vars.transitions.timingFunction,
+    ":hover": {
+      backgroundColor: vars.color.backgroundHighlight,
+    },
+    cursor: "pointer",
+    "@media": {
+      [mediaQuery.desktop]: desktop,
+    },
   },
-  cursor: "pointer",
-  "@media": {
-    "screen and (min-width: 769px)": desktop,
-    "screen and (max-width: 768px)": mobile,
-  },
-});
+]);
 
 export const iconSlot = style({
   width: "24px",
