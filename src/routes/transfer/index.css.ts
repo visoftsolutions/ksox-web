@@ -1,21 +1,21 @@
 import { type ComplexStyleRule, style } from "@vanilla-extract/css";
 import { mediaQuery } from "~/breakpoint.css";
+import { background } from "./layout.css";
 
-const mobile: ComplexStyleRule = {
-  flexFlow: "row wrap",
-};
+export const index = style([background]);
 
 const desktop: ComplexStyleRule = {
-  flexFlow: "column",
+  display: "none",
 };
 
-export const sidenav = style([
+const mobile: ComplexStyleRule = {
+  display: "block",
+};
+
+export const threads = style([
+  background,
   mobile,
   {
-    display: "flex",
-    gap: "2px",
-    justifyItems: "center",
-    justifyContent: "center",
     "@media": {
       [mediaQuery.desktop]: desktop,
     },

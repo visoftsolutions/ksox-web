@@ -19,7 +19,7 @@ const desktop: ComplexStyleRule = {
 export const main = style([
   mobile,
   {
-    backgroundColor: vars.color.background,
+    backgroundColor: vars.color.backgroundHighlight,
     "@media": {
       [mediaQuery.desktop]: desktop,
     },
