@@ -1,6 +1,15 @@
 import { component$ } from "@builder.io/qwik";
 import { type RequestHandler, routeLoader$ } from "@builder.io/qwik-city";
 import { parseMarket } from "./parseMarket";
+import {
+  buySell,
+  chart,
+  chartOrderbook,
+  mainBuySell,
+  mainPosition,
+  orderbook,
+  position,
+} from "./index.css";
 
 export const onRequest: RequestHandler = ({ params, redirect, sharedMap }) => {
   try {
@@ -24,5 +33,16 @@ export default component$(() => {
   console.log(quoteAsset);
   console.log(baseAsset);
 
-  return <></>;
+  return (
+    <div class={mainBuySell}>
+      <div class={mainPosition}>
+        <div class={chartOrderbook}>
+          <div class={chart}></div>
+          <div class={orderbook}></div>
+        </div>
+        <div class={position}></div>
+      </div>
+      <div class={buySell}></div>
+    </div>
+  );
 });
