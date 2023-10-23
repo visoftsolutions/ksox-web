@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="icon flat-line" data-name="Flat Line"
+    viewBox="0 0 24 24">
+    <path d="M20 12a7.91 7.91 0 0 0-.35-2.35 8 8 0 0 0-14.35-2"
+        style="fill:none;stroke:#838383;stroke-linecap:round;stroke-linejoin:round;stroke-width:2" />
+    <path d="M4 12a7.91 7.91 0 0 0 .35 2.35 8 8 0 0 0 14.35 2M19 11l1 1 1-1" data-name="primary"
+        style="fill:none;stroke:#838383;stroke-linecap:round;stroke-linejoin:round;stroke-width:2" />
+    <path
+        d="m5 13-1-1-1 1M10 15h2.5a1.5 1.5 0 0 0 1.5-1.5h0a1.5 1.5 0 0 0-1.5-1.5h-1a1.5 1.5 0 0 1-1.5-1.5h0A1.5 1.5 0 0 1 11.5 9H14M12 9V8m0 8v-1"
+        data-name="primary"
+        style="fill:none;stroke:#838383;stroke-linecap:round;stroke-linejoin:round;stroke-width:2" />
+</svg>

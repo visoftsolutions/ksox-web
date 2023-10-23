@@ -5,11 +5,24 @@ import {
   buySell,
   chart,
   chartOrderbook,
-  mainBuySell,
+  desktopLayout,
+  header,
+  headerDesktop,
+  headerMain,
+  headerMobile,
+  layout,
   mainPosition,
+  mobileLayout,
   orderbook,
+  panel,
   position,
 } from "./index.css";
+import { IconButton } from "~/components/iconButton/iconButton";
+import AccountSvg from "~/media/icons/dark_theme/account.svg?jsx";
+import ChartSvg from "~/media/icons/dark_theme/chart.svg?jsx";
+import OrderbookSvg from "~/media/icons/dark_theme/orderbook.svg?jsx";
+import PositionsSvg from "~/media/icons/dark_theme/positions.svg?jsx";
+import TradesSvg from "~/media/icons/dark_theme/trades.svg?jsx";
 
 export const onRequest: RequestHandler = ({ params, redirect, sharedMap }) => {
   try {
@@ -34,15 +47,58 @@ export default component$(() => {
   console.log(baseAsset);
 
   return (
-    <div class={mainBuySell}>
-      <div class={mainPosition}>
-        <div class={chartOrderbook}>
-          <div class={chart}></div>
-          <div class={orderbook}></div>
+    <div class={headerMain}>
+      <div class={header}>
+        {/* mobile */}
+        <div class={headerMobile}>
+          <IconButton>
+            <AccountSvg style={{ height: "24px" }} q:slot="icon"></AccountSvg>
+            {/* <div q:slot="text">Home</div> */}
+          </IconButton>
+          <IconButton>
+            <ChartSvg style={{ height: "24px" }} q:slot="icon"></ChartSvg>
+            {/* <div q:slot="text">Home</div> */}
+          </IconButton>
+          <IconButton>
+            <OrderbookSvg
+              style={{ height: "24px" }}
+              q:slot="icon"
+            ></OrderbookSvg>
+            {/* <div q:slot="text">Home</div> */}
+          </IconButton>
+          <IconButton>
+            <PositionsSvg
+              style={{ height: "24px" }}
+              q:slot="icon"
+            ></PositionsSvg>
+            {/* <div q:slot="text">Home</div> */}
+          </IconButton>
+          <IconButton>
+            <TradesSvg style={{ height: "24px" }} q:slot="icon"></TradesSvg>
+            {/* <div q:slot="text">Home</div> */}
+          </IconButton>
         </div>
-        <div class={position}></div>
+        {/* desktop */}
+        <div class={headerDesktop}></div>
       </div>
-      <div class={buySell}></div>
+      <div class={layout}>
+        {/* mobile */}
+        <div class={mobileLayout}>
+          <div class={panel}></div>
+        </div>
+
+        {/* desktop */}
+        <div class={desktopLayout}>
+          <div class={mainPosition}>
+            <div class={chartOrderbook}>
+              <div class={chart}></div>
+              <div class={orderbook}></div>
+            </div>
+            <div class={position}></div>
+          </div>
+          <div class={buySell}></div>
+        </div>
+      </div>
     </div>
   );
 });
