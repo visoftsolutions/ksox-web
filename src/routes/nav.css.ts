@@ -1,6 +1,6 @@
 import { type ComplexStyleRule, style } from "@vanilla-extract/css";
 import { mediaQuery } from "~/breakpoint.css";
-import { background, vars } from "~/theme.css";
+import { background } from "~/theme.css";
 
 const mobile: ComplexStyleRule = {
   gridRowStart: "2",
@@ -17,7 +17,8 @@ const desktop: ComplexStyleRule = {
 };
 
 export const nav = style([
-  mobile, background,
+  mobile,
+  background,
   {
     "@media": {
       [mediaQuery.desktop]: desktop,

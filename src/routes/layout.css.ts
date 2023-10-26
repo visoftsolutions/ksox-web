@@ -1,6 +1,6 @@
 import { type ComplexStyleRule, style } from "@vanilla-extract/css";
 import { mediaQuery } from "~/breakpoint.css";
-import { backgroundHighlight, vars } from "~/theme.css";
+import { backgroundHighlight } from "~/theme.css";
 
 const layoutRowMobile: ComplexStyleRule = {
   gridTemplateRows: "1fr",
@@ -11,7 +11,8 @@ const layoutRowDesktop: ComplexStyleRule = {
 };
 
 export const layoutRow = style([
-  layoutRowMobile, backgroundHighlight,
+  layoutRowMobile,
+  backgroundHighlight,
   {
     height: "100%",
     display: "grid",
@@ -36,7 +37,8 @@ const layoutColumnDesktop: ComplexStyleRule = {
 };
 
 export const layoutColumn = style([
-  layoutColumnMobile, backgroundHighlight,
+  layoutColumnMobile,
+  backgroundHighlight,
   {
     display: "grid",
     gap: "1px",
