@@ -1,8 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { index } from "./index.css";
 
 export default component$(() => {
-  return <></>;
+  return <div class={index}></div>;
 });
 
 export const head: DocumentHead = {
@@ -10,7 +11,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "All in one platform for your crypto business",
+      content: "All in one platform for crypto management",
     },
   ],
 };

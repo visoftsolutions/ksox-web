@@ -1,4 +1,4 @@
-import { createTheme } from "@vanilla-extract/css";
+import { createTheme, style } from "@vanilla-extract/css";
 
 export const [darkTheme, vars] = createTheme({
   color: {
@@ -32,4 +32,12 @@ export const lightTheme = createTheme(vars, {
     duration: "0.1s",
     timingFunction: "ease-in-out",
   },
+});
+
+export const background = style({
+  backgroundColor: vars.color.background,
+});
+
+export const backgroundHighlight = style({
+  backgroundColor: vars.color.backgroundHighlight,
 });

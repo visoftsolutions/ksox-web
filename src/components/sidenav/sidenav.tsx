@@ -4,7 +4,7 @@ import { IconButton } from "~/components/iconButton/iconButton";
 
 import HomeSvg from "~/media/icons/dark_theme/logo.svg?jsx";
 import TransferSvg from "~/media/icons/dark_theme/transfer.svg?jsx";
-import ChartSvg from "~/media/icons/dark_theme/chart.svg?jsx";
+import ExchangeSvg from "~/media/icons/dark_theme/exchange.svg?jsx";
 import WalletSvg from "~/media/icons/dark_theme/wallet.svg?jsx";
 import PeopleSvg from "~/media/icons/dark_theme/people.svg?jsx";
 import SettingsSvg from "~/media/icons/dark_theme/settings.svg?jsx";
@@ -27,7 +27,7 @@ export const SideNav = component$(() => {
       </a>
       <a href="/exchange">
         <IconButton>
-          <ChartSvg q:slot="icon"></ChartSvg>
+          <ExchangeSvg q:slot="icon"></ExchangeSvg>
           {/* <div q:slot="text">Home</div> */}
         </IconButton>
       </a>

@@ -1,6 +1,7 @@
 # KSOX-WEB
 
-![Workflow Status](https://github.com/visoftsolutions/ksox-web/actions/workflows/node.js.yml/badge.svg?event=push)
+[![GitHub Workflow Status Qwik Build](https://github.com/visoftsolutions/ksox-web/actions/workflows/qwik_build.yml/badge.svg)](https://github.com/visoftsolutions/ksox-web/actions/workflows/qwik_build.yml)
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
 
 ## 🚀 Quick Start Guide
 
