@@ -7,7 +7,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "KSOX-wallet",
+  title: "KSOX Wallet",
   meta: [
     {
       name: "description",

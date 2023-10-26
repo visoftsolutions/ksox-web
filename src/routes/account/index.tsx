@@ -7,7 +7,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "KSOX-account",
+  title: "KSOX Account",
   meta: [
     {
       name: "description",

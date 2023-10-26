@@ -1,6 +1,6 @@
 import { type ComplexStyleRule, style } from "@vanilla-extract/css";
 import { mediaQuery } from "~/breakpoint.css";
-import { vars } from "~/theme.css";
+import { backgroundHighlight, vars } from "~/theme.css";
 
 const mobile: ComplexStyleRule = {
   gridRowStart: "1",
@@ -17,9 +17,8 @@ const desktop: ComplexStyleRule = {
 };
 
 export const main = style([
-  mobile,
+  mobile, backgroundHighlight,
   {
-    backgroundColor: vars.color.backgroundHighlight,
     "@media": {
       [mediaQuery.desktop]: desktop,
     },

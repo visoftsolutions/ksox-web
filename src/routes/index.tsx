@@ -11,7 +11,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "All in one platform for your crypto business",
+      content: "All in one platform for crypto management",
     },
   ],
 };

@@ -7,11 +7,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "KSOX-people",
+  title: "KSOX People",
   meta: [
     {
       name: "description",
-      content: "Find people manage friends",
+      content: "Find people&manage friends",
     },
   ],
 };

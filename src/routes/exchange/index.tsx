@@ -7,11 +7,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "KSOX-exchange",
+  title: "KSOX Exchange",
   meta: [
     {
       name: "description",
-      content: "Exchange crypto",
+      content: "Exchange crypto platform",
     },
   ],
 };
