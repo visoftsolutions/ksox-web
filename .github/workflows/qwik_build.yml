@@ -16,12 +16,24 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
+
+  fmt:
+    runs-on: self-hosted
+    needs: ["install"]
+
+    steps:
       - run: npm run fmt.check
+
+  lint:
+    runs-on: self-hosted
+    needs: ["install"]
+
+    steps:
       - run: npm run lint
 
   build:
     runs-on: self-hosted
-    needs: ["install"]
+    needs: ["install", "fmt", "lint"]
 
     steps:
       - run: npm run build
