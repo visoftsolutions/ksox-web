@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { background } from "../layout.css";
+import { background } from "~/theme.css";
 
 export const conversation = style({
   display: "grid",

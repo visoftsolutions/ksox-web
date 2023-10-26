@@ -1,10 +1,6 @@
 import { type ComplexStyleRule, style } from "@vanilla-extract/css";
 import { mediaQuery } from "~/breakpoint.css";
-import { vars } from "~/theme.css";
-
-export const background = style({
-  backgroundColor: vars.color.background,
-});
+import { background, backgroundHighlight } from "~/theme.css";
 
 const layoutDesktop: ComplexStyleRule = {
   gridTemplateColumns: "300px 1fr",
@@ -18,10 +14,10 @@ const layoutMobile: ComplexStyleRule = {
 
 export const layout = style([
   layoutMobile,
+  backgroundHighlight,
   {
     display: "grid",
     height: "100%",
-    backgroundColor: vars.color.backgroundHighlight,
     gap: "1px",
     "@media": {
       [mediaQuery.desktop]: layoutDesktop,

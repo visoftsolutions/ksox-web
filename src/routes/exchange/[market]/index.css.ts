@@ -1,10 +1,6 @@
 import { type ComplexStyleRule, style } from "@vanilla-extract/css";
 import { mediaQuery } from "~/breakpoint.css";
-import { vars } from "~/theme.css";
-
-const background = style({
-  backgroundColor: vars.color.background,
-});
+import { background } from "~/theme.css";
 
 const headerMainDesktop: ComplexStyleRule = {
   gridTemplateRows: "48px 1fr",
