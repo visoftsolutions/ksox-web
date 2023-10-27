@@ -1,15 +1,15 @@
 apiVersion: skaffold/v4beta6
 kind: Config
 metadata:
-  name: ksox-finance
+  name: ksox-web
 build:
   platforms:
     - linux/amd64
   artifacts:
-    - image: ksox-finance
+    - image: ksox-web
       context: ./
       docker:
-        dockerfile: ksox-finance.dockerfile
+        dockerfile: ksox-web.dockerfile
 manifests:
   kustomize:
     paths:
