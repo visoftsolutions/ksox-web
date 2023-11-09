@@ -23,6 +23,7 @@ import ChartSvg from "~/media/icons/dark_theme/chart.svg?jsx";
 import OrderbookSvg from "~/media/icons/dark_theme/orderbook.svg?jsx";
 import PositionsSvg from "~/media/icons/dark_theme/positions.svg?jsx";
 import TradesSvg from "~/media/icons/dark_theme/trades.svg?jsx";
+import { Orderbook } from "~/components/exchange/orderbook";
 
 export const onRequest: RequestHandler = ({ params, redirect, sharedMap }) => {
   try {
@@ -93,7 +94,9 @@ export default component$(() => {
           <div class={mainPosition}>
             <div class={chartOrderbook}>
               <div class={chart}></div>
-              <div class={orderbook}></div>
+              <div class={orderbook}>
+                <Orderbook />
+              </div>
             </div>
             <div class={position}></div>
           </div>
