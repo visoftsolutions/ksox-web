@@ -81,6 +81,7 @@ export default component$(() => {
         {/* desktop */}
         <div class={headerDesktop}></div>
       </div>
+
       <div class={layout}>
         {/* mobile */}
         <div class={mobileLayout}>
