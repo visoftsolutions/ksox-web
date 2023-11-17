@@ -435,83 +435,100 @@ export default component$(() => {
           Trade History
         </div>
       </div>
-      {content.value === "orderbook" ? (
-        <>
-          <div class={[orderbookLabelList, orderbookLabel]}>
-            <div class={orderbookPriceLabel}>Price(USDT)</div>
-            <div class={orderbookSingleLabel}>Qty(BTC)</div>
-            <div class={orderbookSingleLabel}>Total(BTC)</div>
-            <div class={orderbookSingleLabel}>Total(USDT)</div>
-          </div>
+      {(() => {
+        switch (content.value) {
+          case "orderbook":
+            return (
+              <>
+                <div class={[orderbookLabelList, orderbookLabel]}>
+                  <div class={orderbookPriceLabel}>Price(USDT)</div>
+                  <div class={orderbookSingleLabel}>Qty(BTC)</div>
+                  <div class={orderbookSingleLabel}>Total(BTC)</div>
+                  <div class={orderbookSingleLabel}>Total(USDT)</div>
+                </div>
 
-          <div class={orederbookSellsReverse}>
-            {dummyOrderBookSells.map((asset) => (
-              <div key={asset.id}>
-                <div class={dd}>
-                  <div class={orderbookNoHighlight}>
-                    <div class={orderbookPriceSells}>{asset.price}</div>
-                    <div class={orderbookSinglePosition}>{asset.qty}</div>
-                  </div>
-                  <div class={orderbookHighlightRed}>
-                    <div class={orderbookSinglePosition}>{asset.total1}</div>
-                    <div class={orderbookSinglePosition}>{asset.total2}</div>
-                  </div>
+                <div class={orederbookSellsReverse}>
+                  {dummyOrderBookSells.map((asset) => (
+                    <div key={asset.id}>
+                      <div class={dd}>
+                        <div class={orderbookNoHighlight}>
+                          <div class={orderbookPriceSells}>{asset.price}</div>
+                          <div class={orderbookSinglePosition}>{asset.qty}</div>
+                        </div>
+                        <div class={orderbookHighlightRed}>
+                          <div class={orderbookSinglePosition}>
+                            {asset.total1}
+                          </div>
+                          <div class={orderbookSinglePosition}>
+                            {asset.total2}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div class={marketTendencyPosition}>
+                  <div class={marketTendency}>37.222.45</div>
+                  <img
+                    width="10"
+                    height="12"
+                    src="../../../../public/GeenArrow.svg"
+                    alt="green arrow"
+                  />
+                </div>
+
+                <div class={orederbookPositionsGrid}>
+                  {dummyOrderBookBuys.map((asset) => (
+                    <div key={asset.id}>
+                      <div class={dd}>
+                        <div class={orderbookNoHighlight}>
+                          <div class={orderbookPriceBuys}>{asset.price}</div>
+                          <div class={orderbookSinglePosition}>{asset.qty}</div>
+                        </div>
+                        <div class={orderbookHighlightGreen}>
+                          <div class={orderbookSinglePosition}>
+                            {asset.total1}
+                          </div>
+                          <div class={orderbookSinglePosition}>
+                            {asset.total2}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            );
+          case "tradeHistory":
+            return (
+              <div class={tradeHistoryGrid}>
+                <div class={tradeHistoryLabels}>
+                  <span>Time</span>
+                  <span>Price</span>
+                  <span class={tradeHistorySize}>Size</span>
+                </div>
+                <div class={tradeHistoryAssetsGrid}>
+                  {dummyTradeHistory.map((asset) => (
+                    <div
+                      key={asset.time}
+                      class={`${tradeHistoryAssets} ${
+                        asset.assetType === "tradeHistoryBuy"
+                          ? tradeHistoryBuy
+                          : tradeHistorySell
+                      }`}>
+                      <div>{asset.time}</div>
+                      <div>{asset.price}</div>
+                      <div class={tradeHistorySize}>{asset.size}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div class={marketTendencyPosition}>
-            <div class={marketTendency}>37.222.45</div>
-            <img
-              width="10"
-              height="12"
-              src="../../../../public/GeenArrow.svg"
-              alt="green arrow"
-            />
-          </div>
-
-          <div class={orederbookPositionsGrid}>
-            {dummyOrderBookBuys.map((asset) => (
-              <div key={asset.id}>
-                <div class={dd}>
-                  <div class={orderbookNoHighlight}>
-                    <div class={orderbookPriceBuys}>{asset.price}</div>
-                    <div class={orderbookSinglePosition}>{asset.qty}</div>
-                  </div>
-                  <div class={orderbookHighlightGreen}>
-                    <div class={orderbookSinglePosition}>{asset.total1}</div>
-                    <div class={orderbookSinglePosition}>{asset.total2}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </>
-      ) : (
-        <div class={tradeHistoryGrid}>
-          <div class={tradeHistoryLabels}>
-            <span>Time</span>
-            <span>Price</span>
-            <span class={tradeHistorySize}>Size</span>
-          </div>
-          <div class={tradeHistoryAssetsGrid}>
-            {dummyTradeHistory.map((asset) => (
-              <div
-                key={asset.time}
-                class={`${tradeHistoryAssets} ${
-                  asset.assetType === "tradeHistoryBuy"
-                    ? tradeHistoryBuy
-                    : tradeHistorySell
-                }`}>
-                <div>{asset.time}</div>
-                <div>{asset.price}</div>
-                <div class={tradeHistorySize}>{asset.size}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+            );
+          default:
+            return null;
+        }
+      })()}
     </div>
   );
 });
