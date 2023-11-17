@@ -15,7 +15,7 @@ export const marketTendency = style([
   {
     width: "fit-content",
     fontSize: "1rem",
-    color: "#3d8e5d",
+    color: vars.color.green,
   },
 ]);
 
@@ -23,7 +23,6 @@ export const marketTendencyPosition = style([
   {
     display: "flex",
     alignItems: "center",
-    color: "#3d8e5d",
   },
 ]);
 
@@ -31,7 +30,7 @@ export const orderbookPriceSells = style([
   {
     display: "flex",
     justifyContent: "flexstart",
-    color: "#d43f4a",
+    color: vars.color.red,
   },
 ]);
 
@@ -47,19 +46,19 @@ export const orderbookSinglePosition = style([
   {
     display: "flex",
     justifyContent: "flex-end",
-    color: "#f8f8f8",
+    color: vars.color.text,
   },
 ]);
 
 export const orderbookLabel = style([
   {
-    color: "#838383",
+    color: vars.color.subtext,
   },
 ]);
 
 export const orderbookPriceLabel = style([
   {
-    color: "#838383",
+    color: vars.color.subtext,
     display: "flex",
     justifyContent: "flex-start",
   },
@@ -67,7 +66,7 @@ export const orderbookPriceLabel = style([
 
 export const orderbookSingleLabel = style([
   {
-    color: "#838383",
+    color: vars.color.subtext,
     display: "flex",
     justifyContent: "flex-end",
   },
@@ -139,7 +138,7 @@ export const viewSwitch = style([
     display: "grid",
     alignItems: "flex-start",
     marginTop: "4px",
-    color: "#838383",
+    color: vars.color.subtext,
 
     ":hover": {
       cursor: "pointer",
@@ -153,13 +152,13 @@ export const viewSwitchGrid = style([
     alignItems: "start",
     rowGap: "10px",
     gridTemplateColumns: "100px 100px 1fr",
-    color: "#838383",
+    color: vars.color.subtext,
   },
 ]);
 
 export const orderbookActive = style([
   {
-    color: "#f8f8f8",
+    color: vars.color.text,
   },
 ]);
 
@@ -170,7 +169,7 @@ export const tradeHistoryActive = style([
     gridTemplateColumns: "100px 100px 1fr",
     gridTemplateRows: "1fr 1fr",
     gap: "1px",
-    color: "#f8f8f8",
+    color: vars.color.text,
   },
 ]);
 
@@ -183,7 +182,7 @@ export const tradeHistoryGrid = style([
 
 export const tradeHistoryLabels = style([
   {
-    color: "#838383",
+    color: vars.color.subtext,
     display: "grid",
     gridTemplateColumns: "140px 1fr 1fr",
   },
@@ -191,7 +190,7 @@ export const tradeHistoryLabels = style([
 
 export const tradeHistoryAssets = style([
   {
-    color: "#838383",
+    color: vars.color.subtext,
     display: "grid",
     gridTemplateColumns: "140px 1fr 1fr",
     gridTemplateRows: "21px",
@@ -205,13 +204,13 @@ export const tradeHistoryAssetsGrid = style([
 
 export const tradeHistoryBuy = style([
   {
-    color: "#3d8e5d",
+    color: vars.color.green,
   },
 ]);
 
 export const tradeHistorySell = style([
   {
-    color: "#d43f4a",
+    color: vars.color.red,
   },
 ]);
 
