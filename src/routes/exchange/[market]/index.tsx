@@ -23,7 +23,7 @@ import ChartSvg from "~/media/icons/dark_theme/chart.svg?jsx";
 import OrderbookSvg from "~/media/icons/dark_theme/orderbook.svg?jsx";
 import PositionsSvg from "~/media/icons/dark_theme/positions.svg?jsx";
 import TradesSvg from "~/media/icons/dark_theme/trades.svg?jsx";
-import { Orderbook } from "~/components/exchange/orderbook";
+import Orderbook from "~/components/exchange/orderbook/orderbook";
 
 export const onRequest: RequestHandler = ({ params, redirect, sharedMap }) => {
   try {
@@ -63,15 +63,13 @@ export default component$(() => {
           <IconButton>
             <OrderbookSvg
               style={{ height: "24px" }}
-              q:slot="icon"
-            ></OrderbookSvg>
+              q:slot="icon"></OrderbookSvg>
             {/* <div q:slot="text">Home</div> */}
           </IconButton>
           <IconButton>
             <PositionsSvg
               style={{ height: "24px" }}
-              q:slot="icon"
-            ></PositionsSvg>
+              q:slot="icon"></PositionsSvg>
             {/* <div q:slot="text">Home</div> */}
           </IconButton>
           <IconButton>
