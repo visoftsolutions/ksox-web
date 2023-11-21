@@ -28,6 +28,7 @@ import {
   tradeHistoryAssetsGrid,
   orederbookSellsReverse,
   dd,
+  orderbookSells,
 } from "./orderbook.css";
 
 const currentdate = new Date();
@@ -39,20 +40,6 @@ const dummyOrderBookBuys = [
     total1: 1.233,
     total2: 222.222,
     id: 0,
-  },
-  {
-    price: 33332,
-    qty: 0.022,
-    total1: 1.233,
-    total2: 222.222,
-    id: 1,
-  },
-  {
-    price: 33332,
-    qty: 0.022,
-    total1: 1.233,
-    total2: 222.222,
-    id: 1,
   },
   {
     price: 33332,
@@ -109,6 +96,41 @@ const dummyOrderBookBuys = [
     total1: 1.233,
     total2: 222.222,
     id: 8,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 9,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 9,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 9,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 9,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 9,
   },
   {
     price: 33332,
@@ -182,6 +204,34 @@ const dummyOrderBookSells = [
     total1: 1.233,
     total2: 222.222,
     id: 90,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 100,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 100,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 100,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 100,
   },
   {
     price: 33332,
@@ -368,50 +418,6 @@ const dummyTradeHistory = [
     size: (Math.random() * 1).toFixed(3),
     assetType: "tradeHistorySell",
   },
-  {
-    time:
-      currentdate.getHours() +
-      ":" +
-      currentdate.getMinutes() +
-      ":" +
-      currentdate.getSeconds(),
-    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
-    size: (Math.random() * 1).toFixed(3),
-    assetType: "tradeHistoryBuy",
-  },
-  {
-    time:
-      currentdate.getHours() +
-      ":" +
-      currentdate.getMinutes() +
-      ":" +
-      currentdate.getSeconds(),
-    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
-    size: (Math.random() * 1).toFixed(3),
-    assetType: "tradeHistorySell",
-  },
-  {
-    time:
-      currentdate.getHours() +
-      ":" +
-      currentdate.getMinutes() +
-      ":" +
-      currentdate.getSeconds(),
-    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
-    size: (Math.random() * 1).toFixed(3),
-    assetType: "tradeHistorySell",
-  },
-  {
-    time:
-      currentdate.getHours() +
-      ":" +
-      currentdate.getMinutes() +
-      ":" +
-      currentdate.getSeconds(),
-    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
-    size: (Math.random() * 1).toFixed(3),
-    assetType: "tradeHistoryBuy",
-  },
 ];
 
 export default component$(() => {
@@ -450,11 +456,12 @@ export default component$(() => {
                 <div class={orederbookSellsReverse}>
                   {dummyOrderBookSells.map((asset) => (
                     <div key={asset.id}>
-                      <div class={dd}>
+                      <div class={orderbookSells}>
                         <div class={orderbookNoHighlight}>
                           <div class={orderbookPriceSells}>{asset.price}</div>
                           <div class={orderbookSinglePosition}>{asset.qty}</div>
                         </div>
+
                         <div class={orderbookHighlightRed}>
                           <div class={orderbookSinglePosition}>
                             {asset.total1}

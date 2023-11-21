@@ -4,10 +4,13 @@ import { vars } from "~/theme.css";
 export const orderbook = style([
   {
     display: "grid",
-    gridTemplateRows: "42px 19px 210px 25px 210px",
+    gridTemplateRows: "1fr 1fr 6fr 1fr 6fr",
     fontSize: "13px",
     padding: "10px",
     fontFamily: "IBMPlexMono-Medium",
+    justifyContent: "flex-start",
+
+    height: "calc(100% - 20px)",
   },
 ]);
 
@@ -84,6 +87,7 @@ export const orderbookHighlightRed = style([
     display: "grid",
     marginLeft: "6px",
     height: "13px",
+    width: "100%",
     gridTemplateColumns: "79.5px 79.5px",
 
     background: "#d43f4a",
@@ -118,9 +122,11 @@ export const orderbookLabelList = style([
 export const orederbookPositionsGrid = style([
   {
     display: "flex",
-    justifyContent: "space-around",
+    rowGap: "4px",
     flexDirection: "column",
+    overflowY: "auto",
     overflow: "hidden",
+    flexWrap: "wrap",
   },
 ]);
 
@@ -128,8 +134,11 @@ export const orederbookSellsReverse = style([
   {
     display: "flex",
     flexDirection: "column-reverse",
-    justifyContent: "space-around",
-    overflow: "hidden",
+    justifyContent: "center",
+    rowGap: "4px",
+    overflowY: "auto",
+    flexWrap: "wrap",
+    position: "relative",
   },
 ]);
 
@@ -223,6 +232,17 @@ export const tradeHistorySize = style([
 export const dd = style([
   {
     display: "flex",
+    position: "relative",
+  },
+]);
+export const orderbookSells = style([
+  {
+    display: "flex",
     flexDirection: "row",
+    position: "absolute",
+    top: "0",
+    bottom: "0",
+    left: "0",
+    right: "0",
   },
 ]);
