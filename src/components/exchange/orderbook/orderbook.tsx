@@ -2,9 +2,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import {
   marketTendency,
-  marketTendencyPosition,
   orderbook,
-  orderbookHighlightRed,
   viewSwitch,
   orderbookActive,
   tradeHistoryActive,
@@ -13,8 +11,6 @@ import {
   tradeHistoryBuy,
   tradeHistorySell,
   tradeHistoryAssets,
-  tradeHistorySize,
-  tradeHistoryAssetsGrid,
   generalLayout,
   priceLabel,
   regularLabel,
@@ -29,6 +25,9 @@ import {
   priceBuys,
   highlightGreen,
   labelGrid,
+  highlightRed,
+  tradeHistoryAssetsList,
+  sizeAsset,
 } from "./orderbook.css";
 
 const currentdate = new Date();
@@ -432,6 +431,171 @@ const dummyTradeHistory = [
     size: (Math.random() * 1).toFixed(3),
     assetType: "tradeHistorySell",
   },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
+  {
+    time:
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds(),
+    price: Math.round(Math.random() * (37000 - 34000) + 34000).toFixed(2),
+    size: (Math.random() * 1).toFixed(3),
+    assetType: "tradeHistorySell",
+  },
 ];
 
 export default component$(() => {
@@ -472,7 +636,7 @@ export default component$(() => {
                             <div class={regularPosition}>{asset.qty}</div>
                           </div>
 
-                          <div class={orderbookHighlightRed}>
+                          <div class={highlightRed}>
                             <div class={regularPosition}>{asset.total1}</div>
                             <div class={regularPosition}>{asset.total2}</div>
                           </div>
@@ -482,8 +646,8 @@ export default component$(() => {
                   </div>
                 </div>
 
-                <div class={marketTendencyPosition}>
-                  <div class={marketTendency}>37.222.45</div>
+                <div class={marketTendency}>
+                  <div>37.222.45</div>
                   <img
                     width="10"
                     height="12"
@@ -515,26 +679,30 @@ export default component$(() => {
             );
           case "tradeHistory":
             return (
-              <div class={tradeHistoryGrid}>
-                <div class={tradeHistoryLabels}>
-                  <span>Time</span>
-                  <span>Price</span>
-                  <span class={tradeHistorySize}>Size</span>
-                </div>
-                <div class={tradeHistoryAssetsGrid}>
-                  {dummyTradeHistory.map((asset) => (
-                    <div
-                      key={asset.time}
-                      class={`${tradeHistoryAssets} ${
-                        asset.assetType === "tradeHistoryBuy"
-                          ? tradeHistoryBuy
-                          : tradeHistorySell
-                      }`}>
-                      <div>{asset.time}</div>
-                      <div>{asset.price}</div>
-                      <div class={tradeHistorySize}>{asset.size}</div>
+              <div class={listRootRelative}>
+                <div class={listRootAbsolute}>
+                  <div class={tradeHistoryGrid}>
+                    <div class={tradeHistoryLabels}>
+                      <span>Time</span>
+                      <span>Price</span>
+                      <span class={sizeAsset}>Size</span>
                     </div>
-                  ))}
+                    <div class={tradeHistoryAssetsList}>
+                      {dummyTradeHistory.map((asset) => (
+                        <div
+                          key={asset.time}
+                          class={`${tradeHistoryAssets} ${
+                            asset.assetType === "tradeHistoryBuy"
+                              ? tradeHistoryBuy
+                              : tradeHistorySell
+                          }`}>
+                          <div>{asset.time}</div>
+                          <div>{asset.price}</div>
+                          <div class={sizeAsset}>{asset.size}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             );

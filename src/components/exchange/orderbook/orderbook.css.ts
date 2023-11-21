@@ -17,11 +17,6 @@ export const marketTendency = style([
     width: "fit-content",
     fontSize: "1rem",
     color: vars.color.green,
-  },
-]);
-
-export const marketTendencyPosition = style([
-  {
     display: "flex",
     alignItems: "center",
   },
@@ -73,19 +68,11 @@ export const regularLabel = style([
   },
 ]);
 
-export const orderbookList = style([
-  {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-  },
-]);
-
-export const orderbookHighlightRed = style([
+export const highlightRed = style([
   {
     display: "grid",
     marginLeft: "6px",
     height: "13px",
-    width: "100%",
     gridTemplateColumns: "79.5px 79.5px",
 
     background: "#d43f4a",
@@ -105,7 +92,7 @@ export const highlightGreen = style([
 export const noHighlight = style([
   {
     display: "grid",
-    gridTemplateColumns: "82.5px 82.5px",
+    gridTemplateColumns: "1fr 1fr",
   },
 ]);
 
@@ -157,11 +144,6 @@ export const orderbookActive = style([
 
 export const tradeHistoryActive = style([
   {
-    display: "grid",
-    alignItems: "start",
-    gridTemplateColumns: "100px 100px 1fr",
-    gridTemplateRows: "1fr 1fr",
-    gap: "1px",
     color: vars.color.text,
   },
 ]);
@@ -169,7 +151,7 @@ export const tradeHistoryActive = style([
 export const tradeHistoryGrid = style([
   {
     display: "grid",
-    gridTemplateRows: "21px 1fr",
+    gridTemplateRows: "1fr 13fr",
   },
 ]);
 
@@ -177,7 +159,8 @@ export const tradeHistoryLabels = style([
   {
     color: vars.color.subtext,
     display: "grid",
-    gridTemplateColumns: "140px 1fr 1fr",
+    gridTemplateColumns: "2fr 1fr 2fr",
+    alignItems: "center",
   },
 ]);
 
@@ -185,13 +168,14 @@ export const tradeHistoryAssets = style([
   {
     color: vars.color.subtext,
     display: "grid",
-    gridTemplateColumns: "140px 1fr 1fr",
-    gridTemplateRows: "21px",
+    gridTemplateColumns: "2fr 1fr 2fr",
   },
 ]);
-export const tradeHistoryAssetsGrid = style([
+export const tradeHistoryAssetsList = style([
   {
-    gridTemplateRows: "21px",
+    display: "flex",
+    flexDirection: "column",
+    rowGap: "4px",
   },
 ]);
 
@@ -207,7 +191,7 @@ export const tradeHistorySell = style([
   },
 ]);
 
-export const tradeHistorySize = style([
+export const sizeAsset = style([
   {
     display: "flex",
     justifyContent: "flex-end",
@@ -217,17 +201,6 @@ export const dd = style([
   {
     display: "flex",
     position: "relative",
-  },
-]);
-export const orderbookSells = style([
-  {
-    // display: "flex",
-    // flexDirection: "row",
-    // position: "absolute",
-    // top: "0",
-    // bottom: "0",
-    // left: "0",
-    // right: "0",
   },
 ]);
 
