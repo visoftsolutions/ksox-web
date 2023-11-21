@@ -4,19 +4,8 @@ import {
   marketTendency,
   marketTendencyPosition,
   orderbook,
-  orderbookSingleLabel,
-  orderbookPriceLabel,
-  orderbookLabel,
-  orderbookSinglePosition,
-  orderbookPriceSells,
-  orderbookPriceBuys,
-  orderbookNoHighlight,
-  orderbookLabelList,
   orderbookHighlightRed,
-  orderbookHighlightGreen,
-  orederbookPositionsGrid,
   viewSwitch,
-  viewSwitchGrid,
   orderbookActive,
   tradeHistoryActive,
   tradeHistoryGrid,
@@ -26,10 +15,20 @@ import {
   tradeHistoryAssets,
   tradeHistorySize,
   tradeHistoryAssetsGrid,
-  orederbookSellsReverse,
-  sellsGrid,
-  sellsRelative,
-  sellsAbsolute,
+  generalLayout,
+  priceLabel,
+  regularLabel,
+  sellsList,
+  noHighlight,
+  priceSells,
+  regularPosition,
+  listRootRelative,
+  listRootAbsolute,
+  positionsGrid,
+  buysList,
+  priceBuys,
+  highlightGreen,
+  labelGrid,
 } from "./orderbook.css";
 
 const currentdate = new Date();
@@ -439,19 +438,15 @@ export default component$(() => {
   const content = useSignal("orderbook");
 
   return (
-    <div class={orderbook}>
-      <div class={viewSwitchGrid}>
+    <div class={generalLayout}>
+      <div class={viewSwitch}>
         <div
-          class={`${viewSwitch} ${
-            content.value === "orderbook" && orderbookActive
-          }`}
+          class={`${content.value === "orderbook" && orderbookActive}`}
           onClick$={() => (content.value = "orderbook")}>
           Orderbook
         </div>
         <div
-          class={`${viewSwitch} ${
-            content.value === "tradeHistory" && tradeHistoryActive
-          }`}
+          class={`${content.value === "tradeHistory" && tradeHistoryActive}`}
           onClick$={() => (content.value = "tradeHistory")}>
           Trade History
         </div>
@@ -460,32 +455,26 @@ export default component$(() => {
         switch (content.value) {
           case "orderbook":
             return (
-              <>
-                <div class={[orderbookLabelList, orderbookLabel]}>
-                  <div class={orderbookPriceLabel}>Price(USDT)</div>
-                  <div class={orderbookSingleLabel}>Qty(BTC)</div>
-                  <div class={orderbookSingleLabel}>Total(BTC)</div>
-                  <div class={orderbookSingleLabel}>Total(USDT)</div>
+              <div class={orderbook}>
+                <div class={labelGrid}>
+                  <div class={priceLabel}>Price(USDT)</div>
+                  <div class={regularLabel}>Qty(BTC)</div>
+                  <div class={regularLabel}>Total(BTC)</div>
+                  <div class={regularLabel}>Total(USDT)</div>
                 </div>
-                <div class={sellsRelative}>
-                  <div class={sellsAbsolute}>
-                    <div class={orederbookSellsReverse}>
+                <div class={listRootRelative}>
+                  <div class={listRootAbsolute}>
+                    <div class={sellsList}>
                       {dummyOrderBookSells.map((asset) => (
-                        <div class={sellsGrid} key={asset.id}>
-                          <div class={orderbookNoHighlight}>
-                            <div class={orderbookPriceSells}>{asset.price}</div>
-                            <div class={orderbookSinglePosition}>
-                              {asset.qty}
-                            </div>
+                        <div class={positionsGrid} key={asset.id}>
+                          <div class={noHighlight}>
+                            <div class={priceSells}>{asset.price}</div>
+                            <div class={regularPosition}>{asset.qty}</div>
                           </div>
 
                           <div class={orderbookHighlightRed}>
-                            <div class={orderbookSinglePosition}>
-                              {asset.total1}
-                            </div>
-                            <div class={orderbookSinglePosition}>
-                              {asset.total2}
-                            </div>
+                            <div class={regularPosition}>{asset.total1}</div>
+                            <div class={regularPosition}>{asset.total2}</div>
                           </div>
                         </div>
                       ))}
@@ -503,32 +492,26 @@ export default component$(() => {
                   />
                 </div>
 
-                <div class={sellsRelative}>
-                  <div class={sellsAbsolute}>
-                    <div class={orederbookPositionsGrid}>
+                <div class={listRootRelative}>
+                  <div class={listRootAbsolute}>
+                    <div class={buysList}>
                       {dummyOrderBookBuys.map((asset) => (
-                        <div class={sellsGrid} key={asset.id}>
-                          <div class={orderbookNoHighlight}>
-                            <div class={orderbookPriceBuys}>{asset.price}</div>
-                            <div class={orderbookSinglePosition}>
-                              {asset.qty}
-                            </div>
+                        <div class={positionsGrid} key={asset.id}>
+                          <div class={noHighlight}>
+                            <div class={priceBuys}>{asset.price}</div>
+                            <div class={regularPosition}>{asset.qty}</div>
                           </div>
 
-                          <div class={orderbookHighlightGreen}>
-                            <div class={orderbookSinglePosition}>
-                              {asset.total1}
-                            </div>
-                            <div class={orderbookSinglePosition}>
-                              {asset.total2}
-                            </div>
+                          <div class={highlightGreen}>
+                            <div class={regularPosition}>{asset.total1}</div>
+                            <div class={regularPosition}>{asset.total2}</div>
                           </div>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
             );
           case "tradeHistory":
             return (

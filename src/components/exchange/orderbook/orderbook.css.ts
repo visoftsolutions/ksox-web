@@ -1,10 +1,10 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "~/theme.css";
 
-export const orderbook = style([
+export const generalLayout = style([
   {
     display: "grid",
-    gridTemplateRows: "1fr 1fr 6fr 1fr 6fr",
+    gridTemplateRows: "1fr 14fr",
     fontSize: "13px",
     padding: "10px",
     fontFamily: "IBMPlexMono-Medium",
@@ -27,7 +27,7 @@ export const marketTendencyPosition = style([
   },
 ]);
 
-export const orderbookPriceSells = style([
+export const priceSells = style([
   {
     display: "flex",
     justifyContent: "flexstart",
@@ -35,7 +35,7 @@ export const orderbookPriceSells = style([
   },
 ]);
 
-export const orderbookPriceBuys = style([
+export const priceBuys = style([
   {
     display: "flex",
     justifyContent: "flexstart",
@@ -43,7 +43,7 @@ export const orderbookPriceBuys = style([
   },
 ]);
 
-export const orderbookSinglePosition = style([
+export const regularPosition = style([
   {
     display: "flex",
     justifyContent: "flex-end",
@@ -57,7 +57,7 @@ export const orderbookLabel = style([
   },
 ]);
 
-export const orderbookPriceLabel = style([
+export const priceLabel = style([
   {
     color: vars.color.subtext,
     display: "flex",
@@ -65,7 +65,7 @@ export const orderbookPriceLabel = style([
   },
 ]);
 
-export const orderbookSingleLabel = style([
+export const regularLabel = style([
   {
     color: vars.color.subtext,
     display: "flex",
@@ -92,7 +92,7 @@ export const orderbookHighlightRed = style([
   },
 ]);
 
-export const orderbookHighlightGreen = style([
+export const highlightGreen = style([
   {
     display: "grid",
     marginLeft: "6px",
@@ -102,64 +102,50 @@ export const orderbookHighlightGreen = style([
   },
 ]);
 
-export const orderbookNoHighlight = style([
+export const noHighlight = style([
   {
     display: "grid",
     gridTemplateColumns: "82.5px 82.5px",
   },
 ]);
 
-export const orderbookLabelList = style([
+export const labelGrid = style([
   {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
     alignItems: "center",
+    color: vars.color.subtext,
   },
 ]);
 
-export const orederbookPositionsGrid = style([
+export const buysList = style([
   {
     display: "flex",
     rowGap: "4px",
     flexDirection: "column",
-    overflowY: "auto",
-    overflow: "hidden",
-    flexWrap: "wrap",
   },
 ]);
 
-export const orederbookSellsReverse = style([
+export const sellsList = style([
   {
     display: "flex",
     flexDirection: "column-reverse",
-    justifyContent: "center",
     rowGap: "4px",
-    overflowY: "auto",
-    flexWrap: "wrap",
-    overflow: "hidden",
   },
 ]);
 
 export const viewSwitch = style([
   {
     display: "grid",
-    alignItems: "flex-start",
-    marginTop: "4px",
-    color: vars.color.subtext,
-
-    ":hover": {
-      cursor: "pointer",
-    },
-  },
-]);
-
-export const viewSwitchGrid = style([
-  {
-    display: "grid",
     alignItems: "start",
     rowGap: "10px",
     gridTemplateColumns: "100px 100px 1fr",
     color: vars.color.subtext,
+    marginTop: "4px",
+
+    ":hover": {
+      cursor: "pointer",
+    },
   },
 ]);
 
@@ -245,22 +231,30 @@ export const orderbookSells = style([
   },
 ]);
 
-export const sellsGrid = style([
+export const positionsGrid = style([
   {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
   },
 ]);
 
-export const sellsRelative = style([
+export const listRootRelative = style([
   {
     position: "relative",
     overflow: "hidden",
   },
 ]);
 
-export const sellsAbsolute = style([
+export const listRootAbsolute = style([
   {
     position: "absolute",
+  },
+]);
+
+export const orderbook = style([
+  {
+    display: "grid",
+    gridTemplateRows: "1fr 6fr 1fr 6fr",
+    fontSize: "13px",
   },
 ]);
