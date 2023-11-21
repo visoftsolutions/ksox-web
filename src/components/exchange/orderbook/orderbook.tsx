@@ -27,8 +27,9 @@ import {
   tradeHistorySize,
   tradeHistoryAssetsGrid,
   orederbookSellsReverse,
-  dd,
-  orderbookSells,
+  sellsGrid,
+  sellsRelative,
+  sellsAbsolute,
 } from "./orderbook.css";
 
 const currentdate = new Date();
@@ -204,6 +205,20 @@ const dummyOrderBookSells = [
     total1: 1.233,
     total2: 222.222,
     id: 90,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 100,
+  },
+  {
+    price: 33332,
+    qty: 0.022,
+    total1: 1.233,
+    total2: 222.222,
+    id: 100,
   },
   {
     price: 33332,
@@ -452,27 +467,30 @@ export default component$(() => {
                   <div class={orderbookSingleLabel}>Total(BTC)</div>
                   <div class={orderbookSingleLabel}>Total(USDT)</div>
                 </div>
-
-                <div class={orederbookSellsReverse}>
-                  {dummyOrderBookSells.map((asset) => (
-                    <div key={asset.id}>
-                      <div class={orderbookSells}>
-                        <div class={orderbookNoHighlight}>
-                          <div class={orderbookPriceSells}>{asset.price}</div>
-                          <div class={orderbookSinglePosition}>{asset.qty}</div>
-                        </div>
-
-                        <div class={orderbookHighlightRed}>
-                          <div class={orderbookSinglePosition}>
-                            {asset.total1}
+                <div class={sellsRelative}>
+                  <div class={sellsAbsolute}>
+                    <div class={orederbookSellsReverse}>
+                      {dummyOrderBookSells.map((asset) => (
+                        <div class={sellsGrid} key={asset.id}>
+                          <div class={orderbookNoHighlight}>
+                            <div class={orderbookPriceSells}>{asset.price}</div>
+                            <div class={orderbookSinglePosition}>
+                              {asset.qty}
+                            </div>
                           </div>
-                          <div class={orderbookSinglePosition}>
-                            {asset.total2}
+
+                          <div class={orderbookHighlightRed}>
+                            <div class={orderbookSinglePosition}>
+                              {asset.total1}
+                            </div>
+                            <div class={orderbookSinglePosition}>
+                              {asset.total2}
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
 
                 <div class={marketTendencyPosition}>
@@ -485,25 +503,30 @@ export default component$(() => {
                   />
                 </div>
 
-                <div class={orederbookPositionsGrid}>
-                  {dummyOrderBookBuys.map((asset) => (
-                    <div key={asset.id}>
-                      <div class={dd}>
-                        <div class={orderbookNoHighlight}>
-                          <div class={orderbookPriceBuys}>{asset.price}</div>
-                          <div class={orderbookSinglePosition}>{asset.qty}</div>
-                        </div>
-                        <div class={orderbookHighlightGreen}>
-                          <div class={orderbookSinglePosition}>
-                            {asset.total1}
+                <div class={sellsRelative}>
+                  <div class={sellsAbsolute}>
+                    <div class={orederbookPositionsGrid}>
+                      {dummyOrderBookBuys.map((asset) => (
+                        <div class={sellsGrid} key={asset.id}>
+                          <div class={orderbookNoHighlight}>
+                            <div class={orderbookPriceBuys}>{asset.price}</div>
+                            <div class={orderbookSinglePosition}>
+                              {asset.qty}
+                            </div>
                           </div>
-                          <div class={orderbookSinglePosition}>
-                            {asset.total2}
+
+                          <div class={orderbookHighlightGreen}>
+                            <div class={orderbookSinglePosition}>
+                              {asset.total1}
+                            </div>
+                            <div class={orderbookSinglePosition}>
+                              {asset.total2}
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
               </>
             );

@@ -8,8 +8,6 @@ export const orderbook = style([
     fontSize: "13px",
     padding: "10px",
     fontFamily: "IBMPlexMono-Medium",
-    justifyContent: "flex-start",
-
     height: "calc(100% - 20px)",
   },
 ]);
@@ -138,7 +136,7 @@ export const orederbookSellsReverse = style([
     rowGap: "4px",
     overflowY: "auto",
     flexWrap: "wrap",
-    position: "relative",
+    overflow: "hidden",
   },
 ]);
 
@@ -237,12 +235,32 @@ export const dd = style([
 ]);
 export const orderbookSells = style([
   {
-    display: "flex",
-    flexDirection: "row",
+    // display: "flex",
+    // flexDirection: "row",
+    // position: "absolute",
+    // top: "0",
+    // bottom: "0",
+    // left: "0",
+    // right: "0",
+  },
+]);
+
+export const sellsGrid = style([
+  {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+  },
+]);
+
+export const sellsRelative = style([
+  {
+    position: "relative",
+    overflow: "hidden",
+  },
+]);
+
+export const sellsAbsolute = style([
+  {
     position: "absolute",
-    top: "0",
-    bottom: "0",
-    left: "0",
-    right: "0",
   },
 ]);
