@@ -61,6 +61,7 @@ export default component$(() => {
                   <div class={regularLabel}>Total(BTC)</div>
                   <div class={regularLabel}>Total(USDT)</div>
                 </div>
+
                 <div class={listRootRelative}>
                   <div class={listRootAbsolute}>
                     <div class={sellsList}>

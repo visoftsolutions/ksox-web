@@ -125,11 +125,10 @@ export const viewSwitch = style([
   {
     display: "grid",
     alignItems: "start",
-    rowGap: "10px",
     gridTemplateColumns: "100px 100px 1fr",
     color: vars.color.subtext,
-    marginTop: "4px",
-
+    marginBottom: "1px",
+    background: vars.color.background,
     ":hover": {
       cursor: "pointer",
     },
