@@ -679,32 +679,34 @@ export default component$(() => {
             );
           case "tradeHistory":
             return (
-              <div class={listRootRelative}>
-                <div class={listRootAbsolute}>
-                  <div class={tradeHistoryGrid}>
-                    <div class={tradeHistoryLabels}>
-                      <span>Time</span>
-                      <span>Price</span>
-                      <span class={sizeAsset}>Size</span>
-                    </div>
-                    <div class={tradeHistoryAssetsList}>
-                      {dummyTradeHistory.map((asset) => (
-                        <div
-                          key={asset.time}
-                          class={`${tradeHistoryAssets} ${
-                            asset.assetType === "tradeHistoryBuy"
-                              ? tradeHistoryBuy
-                              : tradeHistorySell
-                          }`}>
-                          <div>{asset.time}</div>
-                          <div>{asset.price}</div>
-                          <div class={sizeAsset}>{asset.size}</div>
-                        </div>
-                      ))}
+              <>
+                <div class={tradeHistoryGrid}>
+                  <div class={tradeHistoryLabels}>
+                    <span>Time</span>
+                    <span>Price</span>
+                    <span class={sizeAsset}>Size</span>
+                  </div>
+                  <div class={listRootRelative}>
+                    <div class={listRootAbsolute}>
+                      <div class={tradeHistoryAssetsList}>
+                        {dummyTradeHistory.map((asset) => (
+                          <div
+                            key={asset.time}
+                            class={`${tradeHistoryAssets} ${
+                              asset.assetType === "tradeHistoryBuy"
+                                ? tradeHistoryBuy
+                                : tradeHistorySell
+                            }`}>
+                            <div>{asset.time}</div>
+                            <div>{asset.price}</div>
+                            <div class={sizeAsset}>{asset.size}</div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </>
             );
           default:
             return null;
