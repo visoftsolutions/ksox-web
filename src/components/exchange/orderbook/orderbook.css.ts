@@ -1,24 +1,40 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "~/theme.css";
 
-export const generalLayout = style([
+export const gap = style([
   {
-    display: "grid",
-    gridTemplateRows: "1fr 14fr",
-    fontSize: "13px",
-    padding: "10px",
-    fontFamily: "IBMPlexMono-Medium",
-    height: "calc(100% - 20px)",
+    gap: "10px",
   },
 ]);
 
-export const marketTendency = style([
+export const generalLayout = style([
+  gap,
   {
-    width: "fit-content",
-    fontSize: "1rem",
-    color: vars.color.green,
-    display: "flex",
+    display: "grid",
+    gridTemplateRows: "auto 1fr",
+    fontSize: "12px",
+    fontFamily: "IBMPlexMono-Medium",
+    padding: "10px",
+    height: "calc(100% - 20px)",
+    fontWeight: "bold",
+    color: vars.color.subtext,
+  },
+]);
+
+export const marketPrice = style([
+  gap,
+  {
+    display: "grid",
     alignItems: "center",
+    gridTemplateColumns: "auto auto 1fr",
+  },
+]);
+
+export const price = style([
+  {
+    color: vars.color.green,
+    fontSize: "16px",
+    fontWeight: "bolder",
   },
 ]);
 
@@ -42,29 +58,30 @@ export const regularPosition = style([
   {
     display: "flex",
     justifyContent: "flex-end",
-    color: vars.color.text,
   },
 ]);
 
-export const orderbookLabel = style([
+export const leftLabel = style([
   {
-    color: vars.color.subtext,
-  },
-]);
-
-export const priceLabel = style([
-  {
-    color: vars.color.subtext,
-    display: "flex",
     justifyContent: "flex-start",
+    textAlign: "left",
   },
 ]);
 
-export const regularLabel = style([
+export const rightLabel = style([
   {
-    color: vars.color.subtext,
-    display: "flex",
     justifyContent: "flex-end",
+    textAlign: "right",
+  },
+]);
+
+export const highlight = style([
+  {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: "10px",
   },
 ]);
 
@@ -96,10 +113,19 @@ export const noHighlight = style([
   },
 ]);
 
-export const labelGrid = style([
+export const labelGrid3 = style([
   {
     display: "grid",
-    gridTemplateColumns: "1fr 1fr 1fr 1fr",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    alignItems: "center",
+    color: vars.color.subtext,
+  },
+]);
+
+export const labelGrid4 = style([
+  {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, 1fr)",
     alignItems: "center",
     color: vars.color.subtext,
   },
@@ -116,8 +142,8 @@ export const buysList = style([
 export const sellsList = style([
   {
     display: "flex",
-    flexDirection: "column-reverse",
     rowGap: "4px",
+    flexDirection: "column-reverse",
   },
 ]);
 
@@ -127,11 +153,18 @@ export const viewSwitch = style([
     alignItems: "start",
     gridTemplateColumns: "100px 100px 1fr",
     color: vars.color.subtext,
-    marginBottom: "1px",
     background: vars.color.background,
     ":hover": {
       cursor: "pointer",
     },
+  },
+]);
+
+export const switchButton = style([
+  {
+    paddingTop: "5px",
+    paddingBottom: "5px",
+    fontSize: "14px",
   },
 ]);
 
@@ -147,77 +180,45 @@ export const tradeHistoryActive = style([
   },
 ]);
 
-export const tradeHistoryGrid = style([
+export const trade = style([
   {
     display: "grid",
-    gridTemplateRows: "1fr 13fr",
+    gridTemplateRows: "auto 1fr",
+    gap: "10px",
+    fontSize: "12px",
   },
 ]);
 
-export const tradeHistoryLabels = style([
+export const tradeElement = style([
   {
     color: vars.color.subtext,
     display: "grid",
-    gridTemplateColumns: "2fr 1fr 2fr",
-    alignItems: "center",
+    gridTemplateColumns: "repeat(3, 1fr)",
   },
 ]);
-
-export const tradeHistoryAssets = style([
-  {
-    color: vars.color.subtext,
-    display: "grid",
-    gridTemplateColumns: "2fr 1fr 2fr",
-  },
-]);
-export const tradeHistoryAssetsList = style([
+export const tradeList = style([
   {
     display: "flex",
-    flexDirection: "column",
     rowGap: "4px",
+    flexDirection: "column",
   },
 ]);
 
-export const tradeHistoryBuy = style([
-  {
-    color: vars.color.green,
-  },
-]);
-
-export const tradeHistorySell = style([
-  {
-    color: vars.color.red,
-  },
-]);
-
-export const sizeAsset = style([
-  {
-    display: "flex",
-    justifyContent: "flex-end",
-  },
-]);
-export const dd = style([
-  {
-    display: "flex",
-    position: "relative",
-  },
-]);
-
-export const positionsGrid = style([
+export const twoPartGrid = style([
   {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
   },
 ]);
 
-export const listRootRelative = style([
+export const relative = style([
   {
     position: "relative",
     overflow: "hidden",
   },
 ]);
 
-export const listRootAbsolute = style([
+export const absoluteFill = style([
   {
     position: "absolute",
     top: "0",
@@ -230,7 +231,34 @@ export const listRootAbsolute = style([
 export const orderbook = style([
   {
     display: "grid",
-    gridTemplateRows: "1fr 6fr 1fr 6fr",
-    fontSize: "13px",
+    gridTemplateRows: "auto 1fr auto 1fr",
+    gap: "10px",
+    fontSize: "12px",
+  },
+]);
+
+export const greenText = style([
+  {
+    color: vars.color.green,
+  },
+]);
+
+export const redText = style([
+  {
+    color: vars.color.red,
+  },
+]);
+
+export const greenHighlight = style([
+  {
+    backgroundColor: vars.color.green,
+    opacity: 0.1,
+  },
+]);
+
+export const redHighlight = style([
+  {
+    backgroundColor: vars.color.red,
+    opacity: 0.1,
   },
 ]);

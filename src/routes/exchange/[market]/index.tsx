@@ -63,13 +63,15 @@ export default component$(() => {
           <IconButton>
             <OrderbookSvg
               style={{ height: "24px" }}
-              q:slot="icon"></OrderbookSvg>
+              q:slot="icon"
+            ></OrderbookSvg>
             {/* <div q:slot="text">Home</div> */}
           </IconButton>
           <IconButton>
             <PositionsSvg
               style={{ height: "24px" }}
-              q:slot="icon"></PositionsSvg>
+              q:slot="icon"
+            ></PositionsSvg>
             {/* <div q:slot="text">Home</div> */}
           </IconButton>
           <IconButton>
