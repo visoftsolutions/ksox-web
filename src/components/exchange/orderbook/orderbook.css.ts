@@ -85,34 +85,6 @@ export const highlight = style([
   },
 ]);
 
-export const highlightRed = style([
-  {
-    display: "grid",
-    marginLeft: "6px",
-    height: "13px",
-    gridTemplateColumns: "79.5px 79.5px",
-
-    background: "#d43f4a",
-  },
-]);
-
-export const highlightGreen = style([
-  {
-    display: "grid",
-    marginLeft: "6px",
-    height: "13px",
-    gridTemplateColumns: "79.5px 79.5px",
-    background: "#3d8e5d",
-  },
-]);
-
-export const noHighlight = style([
-  {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-  },
-]);
-
 export const labelGrid3 = style([
   {
     display: "grid",
