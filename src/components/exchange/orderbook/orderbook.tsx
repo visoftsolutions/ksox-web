@@ -38,16 +38,18 @@ export default component$(() => {
 
   return (
     <div class={generalLayout}>
-      <div class={viewSwitch}>
-        <div
-          class={`${content.value === "orderbook" && orderbookActive}`}
-          onClick$={() => (content.value = "orderbook")}>
-          Orderbook
-        </div>
-        <div
-          class={`${content.value === "tradeHistory" && tradeHistoryActive}`}
-          onClick$={() => (content.value = "tradeHistory")}>
-          Trade History
+      <div>
+        <div class={viewSwitch}>
+          <div
+            class={`${content.value === "orderbook" && orderbookActive}`}
+            onClick$={() => (content.value = "orderbook")}>
+            Orderbook
+          </div>
+          <div
+            class={`${content.value === "tradeHistory" && tradeHistoryActive}`}
+            onClick$={() => (content.value = "tradeHistory")}>
+            Trade History
+          </div>
         </div>
       </div>
       {(() => {
