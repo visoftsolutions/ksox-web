@@ -1,28 +1,32 @@
 import { component$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import {
-  buttonsField,
-  buyButton,
+  buttons,
   buyButtonActive,
-  limitChoice,
-  limitField,
-  limitMarketTpslActive,
-  limitOrderGrid,
-  limitOrderWrapper,
-  sellButton,
+  buySellButton,
+  comissions,
+  inputField,
+  sectionGrid,
+  sectionWrapper,
   sellButtonActive,
+  comissionChoice,
+  comissionChoiceActive,
+  inputFieldAndLabel,
+  input,
+  inputMiddleLabel,
+  balance,
 } from "./limitOrder.css";
 
 export default component$(() => {
   const buySellChoice = useSignal("buy");
   const limitMarketTpsl = useSignal("limit");
   return (
-    <div class={limitOrderWrapper}>
-      <div class={limitOrderGrid}>
-        <div class={buttonsField}>
+    <div class={sectionWrapper}>
+      <div class={sectionGrid}>
+        <div class={buttons}>
           <button
             class={[
-              `${buyButton} ${
+              `${buySellButton} ${
                 buySellChoice.value === "buy" && buyButtonActive
               }`,
             ]}
@@ -31,7 +35,7 @@ export default component$(() => {
           </button>
           <button
             class={[
-              `${sellButton} ${
+              `${buySellButton} ${
                 buySellChoice.value === "sell" && sellButtonActive
               }`,
             ]}
@@ -39,42 +43,42 @@ export default component$(() => {
             Sell
           </button>
         </div>
-        <ul class={limitField}>
+        <ul class={comissions}>
           <li
-            class={`${limitChoice} ${
-              limitMarketTpsl.value === "limit" && limitMarketTpslActive
+            class={`${comissionChoice} ${
+              limitMarketTpsl.value === "limit" && comissionChoiceActive
             }`}
             onClick$={() => (limitMarketTpsl.value = "limit")}>
             Limit
           </li>
           <li
-            class={`${limitChoice} ${
-              limitMarketTpsl.value === "market" && limitMarketTpslActive
+            class={`${comissionChoice} ${
+              limitMarketTpsl.value === "market" && comissionChoiceActive
             }`}
             onClick$={() => (limitMarketTpsl.value = "market")}>
             Market
           </li>
           <li
-            class={`${limitChoice} ${
-              limitMarketTpsl.value === "tpsl" && limitMarketTpslActive
+            class={`${comissionChoice} ${
+              limitMarketTpsl.value === "tpsl" && comissionChoiceActive
             }`}
             onClick$={() => (limitMarketTpsl.value = "tpsl")}>
             TP/SL
           </li>
         </ul>
-        <div>
-          <span>availble balnce</span>
-          <span>USDT</span>
+        <div class={input}>
+          <label>Order Price</label>
+          <div class={inputFieldAndLabel}>
+            <input class={inputField}></input>
+            <span class={inputMiddleLabel}>USDT</span>
+          </div>
         </div>
-        <div>
-          <span>Order Price</span>
-          <input></input>
-          <span>USDT</span>
-        </div>
-        <div>
-          <span>Qty</span>
-          <input></input>
-          <span>BTC</span>
+        <div class={input}>
+          <label>Qty</label>
+          <div class={inputFieldAndLabel}>
+            <input class={inputField}></input>
+            <span class={inputMiddleLabel}>BTC</span>
+          </div>
         </div>
         <div>
           <input
@@ -86,10 +90,16 @@ export default component$(() => {
             id="myRange"
           />
         </div>
-        <div>
-          <span>Order Value</span>
-          <input></input>
-          <span>USDT</span>
+        <div class={input}>
+          <label>Order Value</label>
+          <div class={inputFieldAndLabel}>
+            <input class={inputField}></input>
+            <span class={inputMiddleLabel}>USDT</span>
+          </div>
+        </div>
+        <div class={balance}>
+          <span>Availble Balnce</span>
+          <span>--USDT</span>
         </div>
       </div>
     </div>
