@@ -4,6 +4,9 @@ import {
   buttonsField,
   buyButton,
   buyButtonActive,
+  limitChoice,
+  limitField,
+  limitMarketTpslActive,
   limitOrderGrid,
   limitOrderWrapper,
   sellButton,
@@ -11,27 +14,54 @@ import {
 } from "./limitOrder.css";
 
 export default component$(() => {
-  const isBuyActive = useSignal(true);
+  const buySellChoice = useSignal("buy");
+  const limitMarketTpsl = useSignal("limit");
   return (
     <div class={limitOrderWrapper}>
       <div class={limitOrderGrid}>
         <div class={buttonsField}>
           <button
-            class={[`${buyButton} ${isBuyActive.value ? buyButtonActive : ""}`]}
-            onClick$={() => (isBuyActive.value = true)}>
+            class={[
+              `${buyButton} ${
+                buySellChoice.value === "buy" && buyButtonActive
+              }`,
+            ]}
+            onClick$={() => (buySellChoice.value = "buy")}>
             Buy
           </button>
           <button
             class={[
-              `${sellButton} ${!isBuyActive.value ? sellButtonActive : ""}`,
+              `${sellButton} ${
+                buySellChoice.value === "sell" && sellButtonActive
+              }`,
             ]}
-            onClick$={() => (isBuyActive.value = false)}>
+            onClick$={() => (buySellChoice.value = "sell")}>
             Sell
           </button>
         </div>
-        <div>
-          <span>Limit</span>
-        </div>
+        <ul class={limitField}>
+          <li
+            class={`${limitChoice} ${
+              limitMarketTpsl.value === "limit" && limitMarketTpslActive
+            }`}
+            onClick$={() => (limitMarketTpsl.value = "limit")}>
+            Limit
+          </li>
+          <li
+            class={`${limitChoice} ${
+              limitMarketTpsl.value === "market" && limitMarketTpslActive
+            }`}
+            onClick$={() => (limitMarketTpsl.value = "market")}>
+            Market
+          </li>
+          <li
+            class={`${limitChoice} ${
+              limitMarketTpsl.value === "tpsl" && limitMarketTpslActive
+            }`}
+            onClick$={() => (limitMarketTpsl.value = "tpsl")}>
+            TP/SL
+          </li>
+        </ul>
         <div>
           <span>availble balnce</span>
           <span>USDT</span>

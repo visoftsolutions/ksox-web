@@ -52,3 +52,28 @@ export const sellButtonActive = style({
   background: vars.color.red,
   color: vars.color.text,
 });
+
+export const limitField = style({
+  width: "100%",
+  display: "flex",
+  flexFlow: "row nowrap",
+  columnGap: "16px",
+  alignItems: "flex-start",
+  justifyContent: "flex-start",
+  listStyle: "none",
+  margin: "0px",
+  padding: "0px",
+  cursor: "pointer",
+});
+
+export const limitChoice = style({
+  color: vars.color.subtext,
+});
+
+export const limitChoiceActive = style({
+  color: vars.color.blue,
+});
+
+export const limitMarketTpslActive = style({
+  color: vars.color.blue,
+});
