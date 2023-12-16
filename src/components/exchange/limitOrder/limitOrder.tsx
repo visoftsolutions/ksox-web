@@ -15,6 +15,8 @@ import {
   input,
   inputMiddleLabel,
   balance,
+  belowFieldInfo,
+  balanceValue,
 } from "./limitOrder.css";
 
 export default component$(() => {
@@ -66,6 +68,10 @@ export default component$(() => {
             TP/SL
           </li>
         </ul>
+        <div class={balance}>
+          <span>Availble Balnce</span>
+          <span class={balanceValue}>--USDT</span>
+        </div>
         <div class={input}>
           <label>Order Price</label>
           <div class={inputFieldAndLabel}>
@@ -96,10 +102,9 @@ export default component$(() => {
             <input class={inputField}></input>
             <span class={inputMiddleLabel}>USDT</span>
           </div>
-        </div>
-        <div class={balance}>
-          <span>Availble Balnce</span>
-          <span>--USDT</span>
+          <div class={belowFieldInfo}>
+            <span>--USD</span>
+          </div>
         </div>
       </div>
     </div>

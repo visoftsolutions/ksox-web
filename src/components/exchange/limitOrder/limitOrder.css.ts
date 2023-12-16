@@ -73,14 +73,18 @@ export const balance = style({
   flexFlow: "row nowrap",
   justifyContent: "space-between",
   color: vars.color.subtext,
-  fontSize: "small",
+  fontSize: "medium",
+});
+
+export const balanceValue = style({
+  color: vars.color.text,
 });
 
 export const input = style({
   display: "flex",
   fontSize: "small",
   flexFlow: "column nowrap",
-  gap: "4px",
+  gap: "6px",
   width: "100%",
   color: vars.color.subtext,
 });
@@ -100,10 +104,11 @@ export const inputFieldAndLabel = style({
 
 export const inputField = style({
   width: "100%",
+  color: vars.color.text,
   borderRadius: "4px",
   background: vars.color.divider,
   border: "1px solid transparent",
-  transition: "border 0.2s",
+  transition: "border 0.3s",
   height: "100%",
   ":focus-visible": { outline: vars.color.blue },
   ":focus": { borderColor: vars.color.blue },
@@ -113,4 +118,9 @@ export const inputField = style({
 export const inputMiddleLabel = style({
   position: "absolute",
   right: "16px",
+});
+
+export const belowFieldInfo = style({
+  display: "flex",
+  justifyContent: "flex-end",
 });
