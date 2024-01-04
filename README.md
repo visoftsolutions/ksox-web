@@ -46,6 +46,29 @@ Regularly check for and integrate updates to keep your project at its best:
 ```sh
 npm run update
 ```
+## My participation
+
+### - **Orderbook component**
+
+To see a list displaying all the buy and sell orders for a specific asset, ranked by price level, follow these simple instructions
+
+```sh
+choose branch 11-develop-order-book-component-for-ksox-web-exchange-section
+npm run
+go to exchange page
+add "btc-usd" to already existing adress in Web Browser
+```
+
+### - **LimitOrder component**
+
+A place in the market where orders are set up and finalize
+
+```sh
+choose branch 13-develop-limit-order-component-for-ksox-web-exchange-section
+npm run
+go to exchange page
+add "btc-usd" to already existing adress in Web Browser
+```
 
 ## 🤝 Contributing
 
