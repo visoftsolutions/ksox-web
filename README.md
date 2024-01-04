@@ -61,7 +61,7 @@ add "btc-usd" to already existing adress in Web Browser
 
 ### - **LimitOrder component**
 
-A place in the market where orders are set up and finalize
+to see a place in the market where orders are set up and finalize
 
 ```sh
 choose branch 13-develop-limit-order-component-for-ksox-web-exchange-section
