@@ -50,7 +50,7 @@ npm run update
 
 ### - **LimitOrder component**
 
-A place in the market where orders are set up and finalize
+To see a place in the market where orders are set up and finalize
 
 ```sh
 choose branch 13-develop-limit-order-component-for-ksox-web-exchange-section
